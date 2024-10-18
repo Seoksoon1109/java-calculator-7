@@ -18,6 +18,14 @@ public class CalculatorController {
     }
 
     private int sumNumbers(String[] numbers) {
-        return 0;
+        int sum = 0;
+        for (String number : numbers) {
+            int num = Integer.parseInt(number);
+            if (num < 0) {
+                throw new IllegalArgumentException("Negative numbers are not allowed.");
+            }
+            sum += num;
+        }
+        return sum;
     }
 }
